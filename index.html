@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    
+    <div id="input-layout">
+        <div class="input-container">
+            <input type="text" name="" id="input-text" placeholder="only accept 2 input (ex : input1 + input2)" disabled>
+        </div>
+        <div class="input-container res">
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+            var operator = 0;
+            var percent = 0;
+            var inputText = document.getElementById('input-text');
+            inputText.value = '';
+        </script>
+    <div id="grid-container">
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            inputText.value = '';
+            operator = 0;
+            percent = 0;
+        ">
+            <div>C</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            var input = inputText.value + '';
+            if(input[input.length-1] == '+' || input[input.length-1] == '-' || input[input.length-1] == '/' || input[input.length-1] == 'x'){
+             alert('invalid format');   
+            }else if(!percent && inputText.value != ''){
+                percent = 1;
+                inputText.value = inputText.value + text;
+            } 
+        ">
+            <div>%</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            var input = '' + inputText.value;
+            inputText.value = input.substring(0,input.length-1);
+            if(input[input.length-1] == '+' || input[input.length-1] == '-' || input[input.length-1] == '/' || input[input.length-1] == 'x') operator = 0;
+            else if(input[input.length-1] == '%') percent = 0;
+        ">
+            <div id="backspace"></div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            if(!operator && inputText.value != ''){
+                operator = 1;
+                percent = 0;
+                inputText.value = inputText.value + text;
+            }
+        ">
+            <div>/</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            var input = inputText.value + '';
+            if(input.length == 1 && input == '0'){
+                alert('invalid format');
+            }else if(percent){
+                alert('invalid format');
+            }else{
+                inputText.value = inputText.value + text;
+            }
+            
+        ">
+            <div>7</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            var input = inputText.value + '';
+            if(input.length == 1 && input == '0'){
+                alert('invalid format');
+            }else if(percent){
+                alert('invalid format');
+            }else{
+                inputText.value = inputText.value + text;
+            }
+            
+        ">
+            <div>8</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            var input = inputText.value + '';
+            if(input.length == 1 && input == '0'){
+                alert('invalid format');
+            }else if(percent){
+                alert('invalid format');
+            }else{
+                inputText.value = inputText.value + text;
+            }
+            
+        ">
+            <div>9</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            if(!operator && inputText.value != ''){
+                operator = 1;
+                percent = 0;
+                inputText.value = inputText.value + text;
+            }
+        ">
+            <div>x</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            var input = inputText.value + '';
+            if(input.length == 1 && input == '0'){
+                alert('invalid format');
+            }else if(percent){
+                alert('invalid format');
+            }else{
+                inputText.value = inputText.value + text;
+            }
+            
+        ">
+            <div>4</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            var input = inputText.value + '';
+            if(input.length == 1 && input == '0'){
+                alert('invalid format');
+            }else if(percent){
+                alert('invalid format');
+            }else{
+                inputText.value = inputText.value + text;
+            }
+            
+        ">
+            <div>5</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            var input = inputText.value + '';
+            if(input.length == 1 && input == '0'){
+                alert('invalid format');
+            }else if(percent){
+                alert('invalid format');
+            }else{
+                inputText.value = inputText.value + text;
+            }
+            
+        ">
+            <div>6</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            
+            if(!operator && inputText.value != ''){
+                operator = 1;
+                percent = 0;
+                inputText.value = inputText.value + text;
+            }
+        ">
+            <div>-</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            var input = inputText.value + '';
+            if(input.length == 1 && input == '0'){
+                alert('invalid format');
+            }else if(percent){
+                alert('invalid format');
+            }else{
+                inputText.value = inputText.value + text;
+            }
+            
+        ">
+            <div>1</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            var input = inputText.value + '';
+            if(input.length == 1 && input == '0'){
+                alert('invalid format');
+            }else if(percent){
+                alert('invalid format');
+            }else{
+                inputText.value = inputText.value + text;
+            }
+            
+        ">
+            <div>2</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            var input = inputText.value + '';
+            if(input.length == 1 && input == '0'){
+                alert('invalid format');
+            }else if(percent){
+                alert('invalid format');
+            }else{
+                inputText.value = inputText.value + text;
+            }
+            
+        ">
+            <div>3</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            if(!operator && inputText.value != ''){
+                operator = 1;
+                percent = 0;
+                inputText.value = inputText.value + text;
+            }
+        ">
+            <div>+</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            var input = inputText.value + '';
+            if(input.length == 0){
+                alert('invalid format');
+            }else if(input.length == 1 && input == '0'){
+                alert('invalid format');
+            }else{
+                inputText.value = inputText.value + text;
+            }
+        ">
+            <div>00</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            var input = inputText.value + '';
+            if(input.length == 1 && input == '0'){
+                alert('invalid format');
+            }else{
+                inputText.value = inputText.value + text;
+            }
+            
+        ">
+            <div>0</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            const text = this.childNodes[1].innerHTML;
+            var input = inputText.value + '';
+            if(input.length == 0){
+                alert('invalid format');
+            }else if(input.length == 1 && input == '0'){
+                alert('invalid format');
+            }else{
+                inputText.value = inputText.value + text;
+            }
+            
+        ">
+            <div>000</div>
+        </div>
+        <div class="button" onclick="
+            var inputText = document.getElementById('input-text');
+            var result = document.getElementById('result');
+            var input = inputText.value + '';
+            var input1 = '';
+            var input2 = '';
+            var num1 = Number();
+            var num2 = Number();
+            var state = 1;
+            var inputOperator = '';
+            var inputResult;
+            for(var i=0;i<input.length;i++){
+                if(input[i] == '+' || input[i] == '-' || input[i] == '/' || input[i] == 'x' ){
+                    inputOperator = input[i];
+                    state = 2;
+                    i++;
+                }
+
+                if(state == 1)    
+                    input1 += input[i];
+                else
+                    input2 += input[i];          
+
+            }
+
+            if(input1[input1.length-1] == '%')num1 = parseInt(input1)/100;
+            else num1 = parseInt(input1);
+
+            if(input2[input2.length-1] == '%')num2 = num1 * (parseInt(input2)/100);
+            else num2 = parseInt(input2);
+
+     
+            if(inputOperator == '+'){
+                inputResult = num1 + num2;
+            }else if(inputOperator == '-'){
+                inputResult = num1 - num2;
+            }else if(inputOperator == '/'){
+                inputResult = num1 / num2;
+            }else if(inputOperator == 'x'){
+                inputResult = num1 * num2;
+            }else{
+
+            }
+            
+            if(input1 == '' || input2 == ''){
+                alert('invalid format');
+            }else{
+                result.innerHTML = inputResult;
+                inputText.value = ' ';
+                operator = 0;
+                percent = 0;
+            }
+        ">
+            <div>=</div>
+        </div>
+    </div>
+    <!-- <script src="./src/main.js"></script> -->
+</body>
+
+</html>
